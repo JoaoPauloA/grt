@@ -1,26 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import questions from './questions';
 
 function QuestionModal({ onClose }) {
-  const [questions, setQuestions] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [explanation, setExplanation] = useState('');
-
-  useEffect(() => {
-    // Carregar perguntas do arquivo JSON
-    fetch('/questions.json')
-      .then(response => response.json())
-      .then(data => setQuestions(data))
-      .catch(error => console.error("Erro ao carregar o arquivo JSON:", error));
-  }, []);
 
   const handleSearch = (e) => {
     const query = e.target.value;
     setSearchQuery(query);
 
     if (query) {
-      // Filtrar perguntas com base no termo de pesquisa
       const filteredSuggestions = questions.filter(q =>
         q.question.toLowerCase().includes(query.toLowerCase())
       );
