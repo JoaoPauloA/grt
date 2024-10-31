@@ -53,7 +53,7 @@ function Scoreboard() {
       <div className="logo-container">
         <img src="logo-great-com-cor-sem-fundo.png" alt="Logo" className="logo" />
       </div>
-      <h2>Placar Eletrônico</h2>
+      <h2>GREat test<br/>Game</h2>
       <input
         type="text"
         value={playerName}
@@ -62,12 +62,12 @@ function Scoreboard() {
       />
       <button onClick={addPlayer} className="add-player">Adicionar Jogador</button>
 
+      <button onClick={() => setShowModal(true)} className="search-question">
+        Test review
+      </button>
+
       {error && <p className="error-message">{error}</p>}
 
-      <button onClick={() => setShowModal(true)} className="search-question">
-        Buscar Pergunta
-      </button>
-      
       {showModal && <QuestionModal onClose={() => setShowModal(false)} />}
       
       <ul className="player-list">

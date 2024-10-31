@@ -32,7 +32,7 @@ function QuestionModal({ onClose }) {
     <div className="modal">
       <div className="modal-content">
         <span className="close" onClick={onClose}>&times;</span>
-        <h3>Buscar carta</h3>
+        <h3>Test Review</h3>
         <input
           type="text"
           value={searchQuery}
